@@ -9,7 +9,7 @@ class TJFTP : public QMainWindow
     Q_OBJECT
 
 public:
-    TJFTP(QWidget *parent);
+    TJFTP(QWidget *parent=0);
     ~TJFTP();
 private:
     QSplitter *hSplitter;

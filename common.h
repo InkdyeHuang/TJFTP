@@ -1,5 +1,5 @@
-#ifndef COMMON_H
-#define COMMON_H
+#pragma once
+
 #include<QtGui>
 
 enum FileSizeType
@@ -38,5 +38,3 @@ struct TreeNode
 };
 
 QString fileSizeUintTranslator(qint64 size);
-
-#endif // COMMON_H

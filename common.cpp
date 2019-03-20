@@ -1,5 +1,5 @@
 #include "common.h"
-QString fileSizeUnitTranslator(qint64 size)
+QString fileSizeUintTranslator(qint64 size)
 {
     qreal fileSize = size;
     int level = fileSizeType_Byte;
@@ -20,5 +20,6 @@ QString fileSizeUnitTranslator(qint64 size)
     else if(level == FileSizeType_MegaByte)
         sizeInfo = QObject::tr("%1 MB").arg(fileSize);
     else if(level >= fileSizeType_GigaByte)
-        sizeInfo == QObject::tr(%1 GB).arg(fileSize);
+        sizeInfo = QObject::tr("%1 GB").arg(fileSize);
+    return sizeInfo;
 }

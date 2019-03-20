@@ -13,4 +13,9 @@
 #include<QTreeView>
 #include<QApplication>
 #include<QFileIconProvider>
+#include<QFileSystemModel>
+#include<QHeaderView>
+#include<QToolButton>
+#include<QStatusBar>
+#include<QHBoxLayout>
 #endif // WIDGET_ITEM_H

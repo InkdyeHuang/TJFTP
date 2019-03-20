@@ -1,4 +1,5 @@
 #include "tjftp.h"
+#include "common.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])
