@@ -18,4 +18,6 @@
 #include<QToolButton>
 #include<QStatusBar>
 #include<QHBoxLayout>
+#include<QMessageBox>
+#include<QTextEdit>
 #endif // WIDGET_ITEM_H

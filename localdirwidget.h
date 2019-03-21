@@ -18,9 +18,17 @@ public:
     void reset();
 private slots:
     void setRootIndex(const QModelIndex &index);
+    void currentIndexChanged(const QString &text);
+    void showContextMenu(const QModelIndex &index);
+    void editingFinished(const QModelIndex &index);
     void dotdot();
     void refresh();
-    void currentIndexChanged(const QString &text);
+    void del();
+    void rename();
+    void newDir();
+    void property();
+    void upload();
+
 private:
     TJFTP *parentTJFTP;
     LocalDirTreeView *localDirTreeView;
@@ -31,6 +39,13 @@ private:
     QToolButton *dotdotDirToolButton;
     QToolButton *refreshDirToolButton;
     QStatusBar *localDirStatusBar;
+    QMenu *contextMenu;
+    QAction *delAction;
+    QAction *renameAction;
+    QAction *newDirAction;
+    QAction *propertyAction;
+    QAction *uploadAction;
+
 };
 
 #endif // LOCALDIRTABWIDGET_H

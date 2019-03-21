@@ -38,3 +38,4 @@ struct TreeNode
 };
 
 QString fileSizeUintTranslator(qint64 size);
+bool delDir(const QString &filePath);
