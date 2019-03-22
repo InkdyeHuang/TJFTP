@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT       += core network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -33,7 +34,9 @@ SOURCES += \
     remotedirwidget.cpp \
     localdirwidget.cpp \
     dirtreemodel.cpp \
-    common.cpp
+    common.cpp \
+    qftp.cpp \
+    qurlinfo.cpp
 
 HEADERS += \
         tjftp.h \
@@ -44,7 +47,9 @@ HEADERS += \
     remotedirwidget.h \
     localdirwidget.h \
     dirtreemodel.h \
-    common.h
+    common.h \
+    qftp.h \
+    qurlinfo.h
 Qt += widgets
 
 # Default rules for deployment.
