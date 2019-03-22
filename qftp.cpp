@@ -317,19 +317,36 @@ void QFtpDTP::socketError(QAbstractSocket::SocketError e)
 
 void QFtpDTP::socketConnectionClosed()
 {
+    if(!is_ba && data.dev)
+        clearData();
+    bytesFromSocket = socket->readAll();
 
+#if defined (QFTPDTP_DEBUG)
+        qDebug("QFtp::connectState(QFtpDTP::CsClosed)");
+#endif
+        emit connectState(QFtpDTP::CsClosed);
 }
 
-void QFtpDTP::socketBytesWritten(qint64)
+void QFtpDTP::socketBytesWritten(qint64 bytes)
 {
-
+    bytesDone += bytes;
+#if defined (QFTPDTP_DEBUG)
+    qDebug("QFtpDTp:bytesWritten(%lli)",bytesDone);
+#endif
+    emit dataTransferProgress(bytesDone,bytesTotal);
+    if(callWriteData)
+        writeData();
 }
 
 void QFtpDTP::setupSocket()
 {
 
 }
-
+void QFtpDTP::clearData()
+{
+    is_ba = false;
+    data.dev = 0;
+}
 QFtp::QFtp(QObject *parent):QObject(parent)
 {
 
